@@ -16,3 +16,8 @@
 - github `github.com/ek150503`
 
 # copyright 2023
+
+# Guideline
+
+- as the website is under development some features may not work but most of them are find
+- I'll finish it quickly.

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BELTEI Library Management System</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style/admin.css" />
+
+    <style>
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      /*  searching styles */
+      .search-container {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+        display: flex;
+        margin: 20px auto;
+        max-width: 600px;
+        padding: 10px;
+      }
+
+      .search-container input[type='text'] {
+        border: none;
+        flex: 1;
+        font-size: 16px;
+        margin-right: 10px;
+        padding: 10px;
+        width: 100%;
+      }
+
+      .search-container button {
+        background-color: #333;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .search-container {
+          flex-direction: column;
+        }
+
+        .search-container input[type='text'],
+        .search-container button {
+          margin: 10px 0;
+          max-width: 100%;
+        }
+      }
+
+      /* footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .footer-link {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: #ddd;
+      }
+
+      @media screen and (max-width: 768px) {
+        .footer-links {
+          flex-direction: column;
+        }
+
+        .footer-link {
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>BELTEI Library Management System</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="./publication.html">Add Publication</a></li>
+        <li><a href="./book.html">Book</a></li>
+        <li><a href="./book_report.html">Book Report</a></li>
+        <li><a href="./branch.html">Branch</a></li>
+        <li><a href="./student.html">Student</a></li>
+        <li><a href="./librarian.html">Librarian</a></li>
+        <li><a href="./student_report.html">Student Report</a></li>
+        <li><a href="./issue_book.html">Issue Book</a></li>
+        <li><a href="./issue_report.html">Issue Report</a></li>
+        <li><a href="./return_book.html">Return Book</a></li>
+        <li><a href="./penalty.html">Penalty</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <div class="search-container">
+      <button style="margin-right: 20px">
+        <a href="./add_book.html">Add Book</a>
+      </button>
+      <input type="text" placeholder="Search..." />
+      <button type="submit">Search</button>
+    </div>
+
+    <main>
+      <section class="book-container">
+        <div class="book">
+          <img
+            src="https://static01.nyt.com/images/2022/12/13/books/13stephen-spotswood-cover/13stephen-spotswood-cover-mobileMasterAt3x.jpg"
+            alt="Book Cover"
+          />
+          <div class="book-info">
+            <h3>Book Title</h3>
+            <p>Book Description</p>
+            <p>Book Author</p>
+          </div>
+          <div class="book-buttons">
+            <button class="delete-button">Delete</button>
+            <button class="update-button">Update</button>
+          </div>
+        </div>
+        <div class="book">
+          <img
+            src="https://static01.nyt.com/images/2022/12/13/books/13stephen-spotswood-cover/13stephen-spotswood-cover-mobileMasterAt3x.jpg"
+            alt="Book Cover"
+          />
+          <div class="book-info">
+            <h3>Book Title</h3>
+            <p>Book Description</p>
+            <p>Book Author</p>
+          </div>
+          <div class="book-buttons">
+            <button class="delete-button">Delete</button>
+            <button class="update-button">Update</button>
+          </div>
+        </div>
+        <div class="book">
+          <img
+            src="https://static01.nyt.com/images/2022/12/13/books/13stephen-spotswood-cover/13stephen-spotswood-cover-mobileMasterAt3x.jpg"
+            alt="Book Cover"
+          />
+          <div class="book-info">
+            <h3>Book Title</h3>
+            <p>Book Description</p>
+            <p>Book Author</p>
+          </div>
+          <div class="book-buttons">
+            <button class="delete-button">Delete</button>
+            <button class="update-button">Update</button>
+          </div>
+        </div>
+        <div class="book">
+          <img
+            src="https://static01.nyt.com/images/2022/12/13/books/13stephen-spotswood-cover/13stephen-spotswood-cover-mobileMasterAt3x.jpg"
+            alt="Book Cover"
+          />
+          <div class="book-info">
+            <h3>Book Title</h3>
+            <p>Book Description</p>
+            <p>Book Author</p>
+          </div>
+          <div class="book-buttons">
+            <button class="delete-button">Delete</button>
+            <button class="update-button">Update</button>
+          </div>
+        </div>
+        <div class="book">
+          <img
+            src="https://static01.nyt.com/images/2022/12/13/books/13stephen-spotswood-cover/13stephen-spotswood-cover-mobileMasterAt3x.jpg"
+            alt="Book Cover"
+          />
+          <div class="book-info">
+            <h3>Book Title</h3>
+            <p>Book Description</p>
+            <p>Book Author</p>
+          </div>
+          <div class="book-buttons">
+            <button class="delete-button">Delete</button>
+            <button class="update-button">Update</button>
+          </div>
+        </div>
+        <div class="book">
+          <img
+            src="https://static01.nyt.com/images/2022/12/13/books/13stephen-spotswood-cover/13stephen-spotswood-cover-mobileMasterAt3x.jpg"
+            alt="Book Cover"
+          />
+          <div class="book-info">
+            <h3>Book Title</h3>
+            <p>Book Description</p>
+            <p>Book Author</p>
+          </div>
+          <div class="book-buttons">
+            <button class="delete-button">Details</button>
+          </div>
+        </div>
+        <div class="book">
+          <img
+            src="https://static01.nyt.com/images/2022/12/13/books/13stephen-spotswood-cover/13stephen-spotswood-cover-mobileMasterAt3x.jpg"
+            alt="Book Cover"
+          />
+          <div class="book-info">
+            <h3>Book Title</h3>
+            <p>Book Description</p>
+            <p>Book Author</p>
+          </div>
+          <div class="book-buttons">
+            <button class="delete-button">Delete</button>
+            <button class="update-button">Update</button>
+          </div>
+        </div>
+        <div class="book">
+          <img
+            src="https://static01.nyt.com/images/2022/12/13/books/13stephen-spotswood-cover/13stephen-spotswood-cover-mobileMasterAt3x.jpg"
+            alt="Book Cover"
+          />
+          <div class="book-info">
+            <h3>Book Title</h3>
+            <p>Book Description</p>
+            <p>Book Author</p>
+          </div>
+          <div class="book-buttons">
+            <button class="delete-button">Delete</button>
+            <button class="update-button">Update</button>
+          </div>
+        </div>
+        <div class="book">
+          <img
+            src="https://static01.nyt.com/images/2022/12/13/books/13stephen-spotswood-cover/13stephen-spotswood-cover-mobileMasterAt3x.jpg"
+            alt="Book Cover"
+          />
+          <div class="book-info">
+            <h3>Book Title</h3>
+            <p>Book Description</p>
+            <p>Book Author</p>
+          </div>
+          <div class="book-buttons">
+            <button class="delete-button">Delete</button>
+            <button class="update-button">Update</button>
+          </div>
+        </div>
+        <div class="book">
+          <img
+            src="https://static01.nyt.com/images/2022/12/13/books/13stephen-spotswood-cover/13stephen-spotswood-cover-mobileMasterAt3x.jpg"
+            alt="Book Cover"
+          />
+          <div class="book-info">
+            <h3>Book Title</h3>
+            <p>Book Description</p>
+            <p>Book Author</p>
+          </div>
+          <div class="book-buttons">
+            <button class="delete-button">Delete</button>
+            <button class="update-button">Update</button>
+          </div>
+        </div>
+        <div class="book">
+          <img
+            src="https://static01.nyt.com/images/2022/12/13/books/13stephen-spotswood-cover/13stephen-spotswood-cover-mobileMasterAt3x.jpg"
+            alt="Book Cover"
+          />
+          <div class="book-info">
+            <h3>Book Title</h3>
+            <p>Book Description</p>
+            <p>Book Author</p>
+          </div>
+          <div class="book-buttons">
+            <button class="delete-button">Delete</button>
+            <button class="update-button">Update</button>
+          </div>
+        </div>
+        <div class="book">
+          <img
+            src="https://static01.nyt.com/images/2022/12/13/books/13stephen-spotswood-cover/13stephen-spotswood-cover-mobileMasterAt3x.jpg"
+            alt="Book Cover"
+          />
+          <div class="book-info">
+            <h3>Book Title</h3>
+            <p>Book Description</p>
+            <p>Book Author</p>
+          </div>
+          <div class="book-buttons">
+            <button class="delete-button">Delete</button>
+            <button class="update-button">Update</button>
+          </div>
+        </div>
+        <!-- add more books here -->
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 BELTEI LIBRARY Management system. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">About Us</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms & Conditions</a>
+        <a href="#" class="footer-link">Contact Us</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Responsive Table Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/admin.css" />
+
+    <style>
+      body {
+        background-color: #f1f1f1;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+      }
+
+      table {
+        background-color: #fff;
+        border-collapse: collapse;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        margin: 50px auto;
+        max-width: 600px;
+        width: 90%;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #4caf50;
+        color: #fff;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      td.actions {
+        text-align: center;
+      }
+
+      .action-buttons {
+        display: inline-block;
+        margin-right: 5px;
+        background-color: #4caf50;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+      }
+
+      .action-buttons:hover {
+        background-color: #3e8e41;
+      }
+
+      /* add student button */
+      .add_student {
+        background-color: #4caf50;
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .add_student:hover {
+        background-color: #3e8e41;
+        color: #fff;
+      }
+
+      .buttons {
+        margin: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      @media screen and (max-width: 600px) {
+        table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+
+        th,
+        td {
+          display: inline-block;
+          width: 100%;
+        }
+
+        tr:nth-child(even) {
+          background-color: transparent;
+        }
+
+        tr:nth-child(odd) {
+          background-color: #f2f2f2;
+        }
+
+        td.actions {
+          text-align: left;
+        }
+
+        .action-buttons {
+          display: block;
+          margin: 5px 0;
+        }
+      }
+
+      /* footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .footer-link {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: #ddd;
+      }
+
+      @media screen and (max-width: 768px) {
+        .footer-links {
+          flex-direction: column;
+        }
+
+        .footer-link {
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 style="margin-top: 0px">BELTEI Library Management System</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="./publication.html">Add Publication</a></li>
+        <li><a href="./book.html">Book</a></li>
+        <li><a href="./book_report.html">Book Report</a></li>
+        <li><a href="./branch.html">Branch</a></li>
+        <li><a href="./student.html">Student</a></li>
+        <li><a href="./librarian.html">Librarian</a></li>
+        <li><a href="./student_report.html">Student Report</a></li>
+        <li><a href="./issue_book.html">Issue Book</a></li>
+        <li><a href="./issue_report.html">Issue Report</a></li>
+        <li><a href="./return_book.html">Return Book</a></li>
+        <li><a href="./penalty.html">Penalty</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <div class="buttons">
+      <button class="add_student">
+        <a href="./add_librarian.php">Add Librarian</a>
+      </button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Full Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>John Doe</td>
+          <td>johndoe</td>
+          <td>johndoe@example.com</td>
+          <td class="actions">
+            <button class="action-buttons">Edit</button>
+            <button class="action-buttons">Update</button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jane Smith</td>
+          <td>janesmith</td>
+          <td>janesmith@example.com</td>
+          <td class="actions">
+            <button class="action-buttons">Edit</button>
+            <button class="action-buttons">Update</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer>
+      <p>&copy; 2023 BELTEI LIBRARY Management system. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">About Us</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms & Conditions</a>
+        <a href="#" class="footer-link">Contact Us</a>
+      </div>
+    </footer>
+  </body>
+</html>

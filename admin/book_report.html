@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style/admin.css" />
+
+    <title>Book Report</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+
+      form label,
+      form select,
+      form button {
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+
+      form select {
+        flex: 1;
+        padding: 10px 0;
+      }
+
+      .btn {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      thead {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #ddd;
+      }
+
+      @media only screen and (max-width: 600px) {
+        form label,
+        form select,
+        form button {
+          margin-right: 0;
+          margin-bottom: 5px;
+          width: 100%;
+        }
+      }
+
+      /* footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .footer-link {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: #ddd;
+      }
+
+      @media screen and (max-width: 768px) {
+        .footer-links {
+          flex-direction: column;
+        }
+
+        .footer-link {
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 style="margin: 0">BELTEI Library Management System</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="./publication.html">Add Publication</a></li>
+        <li><a href="./book.html">Book</a></li>
+        <li><a href="./book_report.html">Book Report</a></li>
+        <li><a href="./branch.html">Branch</a></li>
+        <li><a href="./student.html">Student</a></li>
+        <li><a href="./librarian.html">Librarian</a></li>
+        <li><a href="./student_report.html">Student Report</a></li>
+        <li><a href="./issue_book.html">Issue Book</a></li>
+        <li><a href="./issue_report.html">Issue Report</a></li>
+        <li><a href="./return_book.html">Return Book</a></li>
+        <li><a href="./penalty.html">Penalty</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <form>
+        <label for="branch">Select Branch:</label>
+        <select id="branch" name="branch"></select>
+        <button type="submit" class="btn">View</button>
+      </form>
+
+      <div class="table-container">
+        <h2 style="text-align: center; margin-bottom: 10px">
+          12 - Records Found
+        </h2>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Book Name</th>
+              <th>Quantity</th>
+              <th>Available</th>
+              <th>Rent</th>
+              <th>View</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Book 1</td>
+              <td>10</td>
+              <td>8</td>
+              <td>2</td>
+              <td><button class="btn">View</button></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Book 2</td>
+              <td>5</td>
+              <td>5</td>
+              <td>0</td>
+              <td><button class="btn">View</button></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Book 3</td>
+              <td>15</td>
+              <td>10</td>
+              <td>5</td>
+              <td><button class="btn">View</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2023 BELTEI LIBRARY Management system. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">About Us</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms & Conditions</a>
+        <a href="#" class="footer-link">Contact Us</a>
+      </div>
+    </footer>
+
+    <script src="../scripts/js/admin.js"></script>
+  </body>
+</html>

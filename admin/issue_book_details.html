@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beltei Library Management System - Admin Page</title>
+    <link rel="stylesheet" href="./style/admin.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        /*  position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0; */
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .footer-link {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: #ddd;
+      }
+
+      @media screen and (max-width: 768px) {
+        .footer-links {
+          flex-direction: column;
+        }
+
+        .footer-link {
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>BELTEI Library Management System</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="./publication.html">Add Publication</a></li>
+        <li><a href="./book.html">Book</a></li>
+        <li><a href="./book_report.html">Book Report</a></li>
+        <li><a href="./branch.html">Branch</a></li>
+        <li><a href="./student.html">Student</a></li>
+        <li><a href="./librarian.html">Librarian</a></li>
+        <li><a href="./student_report.html">Student Report</a></li>
+        <li><a href="./issue_book.html">Issue Book</a></li>
+        <li><a href="./issue_report.html">Issue Report</a></li>
+        <li><a href="./return_book.html">Return Book</a></li>
+        <li><a href="./penalty.html">Penalty</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="flex flex-col items-center">
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Student Image"
+            class="w-48 h-48 object-cover rounded-full shadow-lg mb-4"
+          />
+          <h2 class="text-lg font-medium text-gray-800">John Doe</h2>
+        </div>
+        <div class="flex flex-col items-center">
+          <img
+            src="https://via.placeholder.com/200x300"
+            alt="Book Cover"
+            class="w-64 h-96 object-cover shadow-lg mb-4"
+          />
+          <h2 class="text-lg font-medium text-gray-800">The Great Gatsby</h2>
+          <p class="text-gray-700">by F. Scott Fitzgerald</p>
+          <div class="mt-4">
+            <p class="text-gray-700">
+              <strong>Issued Date:</strong> 15-Apr-2023
+            </p>
+            <p class="text-gray-700"><strong>Days Issued:</strong> 14 days</p>
+          </div>
+          <div class="flex mt-4">
+            <button
+              class="px-4 py-2 bg-green-500 text-white rounded-lg shadow-md mr-4 hover:bg-green-600"
+            >
+              Approve
+            </button>
+            <button
+              class="px-4 py-2 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600"
+            >
+              Decline
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2023 BELTEI LIBRARY Management system. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">About Us</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms & Conditions</a>
+        <a href="#" class="footer-link">Contact Us</a>
+      </div>
+    </footer>
+  </body>
+</html>

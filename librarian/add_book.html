@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Book Information Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/add_book.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Book Information Form</h1>
+
+    <div class="form-container">
+      <form id="book-form" method="POST" enctype="multipart/form-data">
+        <div class="form-columns">
+          <div class="form-column">
+            <div class="form-row">
+              <label for="book-title">Book Title</label>
+              <input type="text" id="book-title" name="book-title" required />
+            </div>
+            <div class="form-row">
+              <label for="description">Description</label>
+              <textarea id="description" name="description" rows="5"></textarea>
+            </div>
+            <div class="form-row">
+              <label for="author">Author</label>
+              <input type="text" id="author" name="author" required />
+            </div>
+            <div class="form-row">
+              <label for="publication">Publication</label>
+              <select id="publication" name="publication"></select>
+            </div>
+          </div>
+          <div class="form-column">
+            <div class="form-row">
+              <label for="branch">Branch</label>
+              <select id="branch" name="branch"></select>
+            </div>
+            <div class="form-row">
+              <label for="quantity">Quantity</label>
+              <input type="number" id="quantity" name="quantity" required />
+            </div>
+            <div class="form-row">
+              <label for="book-cover">Book Cover</label>
+              <input
+                type="file"
+                id="book-cover"
+                name="book-cover"
+                accept="image/*"
+              />
+            </div>
+            <div class="form-row">
+              <label for="book">Book (PDF)</label>
+              <input
+                type="file"
+                id="book"
+                name="book"
+                accept="application/pdf"
+              />
+            </div>
+          </div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script src="../scripts/js/admin.js"></script>
+  </body>
+</html>

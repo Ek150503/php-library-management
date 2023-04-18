@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style/admin.css" />
+
+    <title>Book Report</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+
+      form label,
+      form select,
+      form button {
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+
+      form select {
+        flex: 1;
+        padding: 10px 0;
+      }
+
+      .btn {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .card {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+
+      .card img {
+        max-width: 150px;
+        max-height: 200px;
+        margin-right: 20px;
+        padding: 0.5rem;
+      }
+
+      .card-body {
+        flex: 1;
+        padding: 0.5rem;
+      }
+
+      .card-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .card-author,
+      .card-publication,
+      .card-branch,
+      .card-total-quantity,
+      .card-available-quantity,
+      .card-rent-quantity,
+      .card-description {
+        margin-bottom: 5px;
+      }
+
+      .btn-details {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .rent-list {
+        list-style-type: numberic;
+        margin: 0;
+        padding: 0;
+      }
+
+      .rent-list li {
+        margin-bottom: 5px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .card img {
+          max-width: 100%;
+          max-height: 150px;
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        form label,
+        form select,
+        form button {
+          margin-right: 0;
+          margin-bottom: 5px;
+          width: 100%;
+        }
+      }
+
+      /* footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .footer-link {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: #ddd;
+      }
+
+      @media screen and (max-width: 768px) {
+        .footer-links {
+          flex-direction: column;
+        }
+
+        .footer-link {
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 style="margin: 0">BELTEI Library Management System</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="./publication.html">Add Publication</a></li>
+        <li><a href="./book.html">Book</a></li>
+        <li><a href="./book_report.html">Book Report</a></li>
+        <li><a href="./branch.html">Branch</a></li>
+        <li><a href="./student.html">Student</a></li>
+        <li><a href="./librarian.html">Librarian</a></li>
+        <li><a href="./student_report.html">Student Report</a></li>
+        <li><a href="./issue_book.html">Issue Book</a></li>
+        <li><a href="./issue_report.html">Issue Report</a></li>
+        <li><a href="./return_book.html">Return Book</a></li>
+        <li><a href="./penalty.html">Penalty</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <h2>View Book Details</h2>
+      <div class="card">
+        <img src="https://via.placeholder.com/150x200" alt="Book Cover" />
+        <div class="card-body">
+          <h3 class="card-title">Book Title</h3>
+          <p class="card-author">Author: Author Name</p>
+          <p class="card-publication">Publication: Publication Name</p>
+          <p class="card-branch">Branch: Branch Name</p>
+          <p class="card-total-quantity">Total Quantity: 10</p>
+          <p class="card-available-quantity">Available Quantity: 8</p>
+          <p class="card-rent-quantity">Rent Quantity: 2</p>
+          <p class="card-description">Description: Book Description</p>
+          <h2 style="margin-top: 1rem">Students who rents</h2>
+          <ul class="rent-list">
+            <li>Student Name 1</li>
+            <li>Student Name 2</li>
+            <li>Student Name 3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2023 BELTEI LIBRARY Management system. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">About Us</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms & Conditions</a>
+        <a href="#" class="footer-link">Contact Us</a>
+      </div>
+    </footer>
+
+    <script src="../scripts/js/admin.js"></script>
+  </body>
+</html>

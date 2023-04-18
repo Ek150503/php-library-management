@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beltei Library Management System - Admin Page</title>
+    <link rel="stylesheet" href="./style/admin.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      /* cards of faculties */
+
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .card-container {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        max-width: 300px;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .card-image {
+        background-color: #ddd;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card-image img {
+        display: block;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+      }
+
+      .card-title {
+        background-color: #333;
+        color: #fff;
+        font-size: 10px;
+        padding: 10px;
+      }
+
+      .card-content {
+        padding: 10px;
+      }
+
+      .card-content p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      @media screen and (max-width: 768px) {
+        .card-container {
+          max-width: 100%;
+        }
+      }
+
+      /* footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .footer-link {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: #ddd;
+      }
+
+      @media screen and (max-width: 768px) {
+        .footer-links {
+          flex-direction: column;
+        }
+
+        .footer-link {
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>BELTEI Library Management System</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="./publication.html">Add Publication</a></li>
+        <li><a href="./book.html">Book</a></li>
+        <li><a href="./book_report.html">Book Report</a></li>
+        <li><a href="./branch.html">Branch</a></li>
+        <li><a href="./student.html">Student</a></li>
+        <li><a href="./librarian.html">Librarian</a></li>
+        <li><a href="./student_report.html">Student Report</a></li>
+        <li><a href="./issue_book.html">Issue Book</a></li>
+        <li><a href="./issue_report.html">Issue Report</a></li>
+        <li><a href="./return_book.html">Return Book</a></li>
+        <li><a href="./penalty.html">Penalty</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <div class="cards"></div>
+
+    <footer>
+      <p>&copy; 2023 BELTEI LIBRARY Management system. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">About Us</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms & Conditions</a>
+        <a href="#" class="footer-link">Contact Us</a>
+      </div>
+    </footer>
+
+    <script>
+      $(document).ready(function () {
+        $.ajax({
+          url: '../scripts/php/get_faculty.php',
+          method: 'POST',
+          data: {
+            view: true,
+          },
+          success: function (data, status) {
+            $('.cards').html(data);
+          },
+        });
+      });
+    </script>
+    <script src="./../scripts/js/admin/loadbooks.js" defer></script>
+  </body>
+</html>

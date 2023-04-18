@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Card Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/admin.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+      body {
+        background-color: #f1f1f1;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        margin: 50px auto;
+        max-width: 800px;
+        padding: 0 10px;
+        width: 90%;
+      }
+
+      .card {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+        padding: 20px;
+        position: relative;
+      }
+
+      .card img {
+        border-radius: 50%;
+        height: 150px;
+        object-fit: cover;
+        object-position: center;
+        width: 150px;
+      }
+
+      .card-info {
+        flex: 1;
+        margin-left: 20px;
+        text-align: left;
+      }
+
+      .card h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        margin-top: 0;
+      }
+
+      .card p {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .card button {
+        background-color: #4caf50;
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+      }
+
+      .card button:hover {
+        background-color: #3e8e41;
+      }
+
+      .card button.delete {
+        background-color: #f44336;
+        margin-right: 10px;
+      }
+
+      .card button.update {
+        background-color: #2196f3;
+        margin-left: 10px;
+      }
+
+      @media screen and (max-width: 600px) {
+        .card {
+          flex-direction: column;
+        }
+
+        .card img {
+          height: 120px;
+          margin-bottom: 20px;
+          width: 120px;
+        }
+
+        .card-info {
+          margin-left: 0;
+        }
+
+        .card button {
+          font-size: 14px;
+          padding: 5px 10px;
+        }
+      }
+
+      /* footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .footer-link {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: #ddd;
+      }
+
+      @media screen and (max-width: 768px) {
+        .footer-links {
+          flex-direction: column;
+        }
+
+        .footer-link {
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 style="margin-top: 0px">BELTEI Library Management System</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="./publication.html">Add Publication</a></li>
+        <li><a href="./book.html">Book</a></li>
+        <li><a href="./book_report.html">Book Report</a></li>
+        <li><a href="./branch.html">Branch</a></li>
+        <li><a href="./student.html">Student</a></li>
+        <li><a href="./librarian.html">Librarian</a></li>
+        <li><a href="./student_report.html">Student Report</a></li>
+        <li><a href="./issue_book.html">Issue Book</a></li>
+        <li><a href="./issue_report.html">Issue Report</a></li>
+        <li><a href="./return_book.html">Return Book</a></li>
+        <li><a href="./penalty.html">Penalty</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <div class="container"></div>
+
+    <footer>
+      <p>&copy; 2023 BELTEI LIBRARY Management system. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">About Us</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms & Conditions</a>
+        <a href="#" class="footer-link">Contact Us</a>
+      </div>
+    </footer>
+
+    <script>
+      const queryParams = new URLSearchParams(window.location.search);
+      const id = queryParams.get('id');
+
+      console.log(id);
+
+      $(document).ready(function () {
+        $.get('../scripts/php/get_student_detail.php', { id }, function (data) {
+          $('.container').html(data);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+          console.log('Error: ' + errorThrown);
+        });
+
+        $('.delete').on('click', function () {
+          alert(id);
+          // $.get('../scripts/php/delete_student.php', { id }, function (data) {
+          //   alert(data);
+          //   window.location = './student.php';
+          // }).fail(function (jqXHR, textStatus, errorThrown) {
+          //   console.log('Error: ' + errorThrown);
+          // });
+        });
+
+        // $('.update').on('click', function () {
+        //   alert(id);
+        // });
+      });
+
+      document.querySelector('.update').addEventListener('click', () => {
+        alert(id);
+      });
+    </script>
+  </body>
+</html>
+
+<!-- https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg -->

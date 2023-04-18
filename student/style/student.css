@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+}
+
+.navigation ul li:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.navigation ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.user img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 1rem;
+}
+
+.main {
+  padding: 2rem;
+}
+
+.faculties {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.faculty {
+  background-color: #f8f8f8;
+  padding: 1rem;
+  margin: 0.5rem;
+  width: calc(50% - 1rem);
+}
+
+.faculty h2 {
+  margin-bottom: 0.5rem;
+}
+
+.faculty p {
+  color: #666;
+  font-size: 0.8rem;
+}

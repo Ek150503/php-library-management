@@ -6,6 +6,12 @@
     <title>Beltei Library Management System - Admin Page</title>
     <link rel="stylesheet" href="./style/admin.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <style>
       /* footer styles */
@@ -73,7 +79,7 @@
 
     <div class="container mx-auto px-4 py-8">
       <!-- Centered text -->
-      <h1 class="text-center text-3xl font-bold mb-8">6 Issued Records</h1>
+      <h1 class="text-center text-3xl font-bold mb-8">Issued Records</h1>
 
       <!-- Table -->
       <div class="overflow-x-auto">
@@ -87,35 +93,7 @@
               <th class="px-4 py-2">Details</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class="border px-4 py-2">1</td>
-              <td class="border px-4 py-2">John Doe</td>
-              <td class="border px-4 py-2">Computer Science</td>
-              <td class="border px-4 py-2">Introduction to Algorithms</td>
-
-              <td class="border px-4 py-2">
-                <button
-                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                >
-                  View
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">2</td>
-              <td class="border px-4 py-2">Jane Doe</td>
-              <td class="border px-4 py-2">Business Administration</td>
-              <td class="border px-4 py-2">The Lean Startup</td>
-
-              <td class="border px-4 py-2">
-                <button
-                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                >
-                  View
-                </button>
-              </td>
-            </tr>
+          <tbody class="content">
             <!-- Add more rows for additional students and books -->
           </tbody>
         </table>
@@ -131,5 +109,20 @@
         <a href="#" class="footer-link">Contact Us</a>
       </div>
     </footer>
+
+    <script>
+      $(document).ready(function () {
+        $.ajax({
+          url: '../scripts/php/get_issued_report.php',
+          method: 'POST',
+          data: {
+            view: true,
+          },
+          success: function (data, status) {
+            $('.content').html(data);
+          },
+        });
+      });
+    </script>
   </body>
 </html>

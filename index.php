@@ -16,9 +16,34 @@ if(isset($_POST["submit"])){
 
     if($kuser === "a"){
       // admin
+
+      $statement = $pdo->prepare("SELECT * FROM admin WHERE email = :email");
+      $statement->bindValue(':email',$email);
+
+      $statement->execute();
+      
+      $row = $statement->fetch(PDO::FETCH_ASSOC);
+
+      if(password_verify($password, $row["password"])){
+        // $_SESSION["student"] = $row;
+        header("Location: ./admin/index.html");
+      }
+
     }
-    else if($kuser === "r"){
+    else if($kuser === "l"){
       // librarian
+
+      $statement = $pdo->prepare("SELECT * FROM librarian WHERE email = :email");
+      $statement->bindValue(':email',$email);
+
+      $statement->execute();
+      
+      $row = $statement->fetch(PDO::FETCH_ASSOC);
+
+      if(password_verify($password, $row["password"])){
+        // $_SESSION["student"] = $row;
+        header("Location: ./librarian/index.html");
+      }
     }else{
       //student
 

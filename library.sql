@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 18, 2023 at 04:45 PM
+-- Generation Time: Apr 19, 2023 at 08:19 AM
 -- Server version: 5.7.21
 -- PHP Version: 7.2.4
 
@@ -38,7 +38,14 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `role` varchar(20) DEFAULT 'admin',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `firstname`, `lastname`, `email`, `password`, `role`) VALUES
+(1, 'Ek', 'E', 'aekzin15@gmail.com', '$2y$10$h5N7H8EW4hUuM.WaAQ1mROEqDHKz/1Bk1yoC7gezbVs602/6J2VRq', 'admin');
 
 -- --------------------------------------------------------
 
@@ -130,10 +137,10 @@ CREATE TABLE IF NOT EXISTS `issued` (
 --
 
 INSERT INTO `issued` (`issued_id`, `student_id`, `book_id`, `issue_date`, `issued_day`, `returned`, `approved`) VALUES
-(1, 4, 6, '2023-04-18 10:23:44', 5, 0, 0),
+(1, 4, 6, '2023-04-18 10:23:44', 5, 0, 1),
 (2, 4, 8, '2023-04-18 10:28:36', 3, 0, 0),
-(3, 4, 7, '2023-04-18 13:32:31', 7, 0, 0),
-(4, 5, 12, '2023-04-18 14:35:55', 7, 0, 0);
+(3, 4, 7, '2023-04-18 13:32:31', 7, 1, 1),
+(4, 5, 12, '2023-04-18 14:35:55', 7, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -151,7 +158,14 @@ CREATE TABLE IF NOT EXISTS `librarian` (
   `role` varchar(20) DEFAULT 'librarian',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `librarian`
+--
+
+INSERT INTO `librarian` (`id`, `firstname`, `lastname`, `email`, `password`, `role`) VALUES
+(1, 'E', 'E', 'lekzin15@gmail.com', '$2y$10$h5N7H8EW4hUuM.WaAQ1mROEqDHKz/1Bk1yoC7gezbVs602/6J2VRq', 'librarian');
 
 -- --------------------------------------------------------
 

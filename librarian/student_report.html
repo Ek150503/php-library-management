@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beltei Library Management System - Admin Page</title>
+    <link rel="stylesheet" href="./style/admin.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .footer-link {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: #ddd;
+      }
+
+      @media screen and (max-width: 768px) {
+        .footer-links {
+          flex-direction: column;
+        }
+
+        .footer-link {
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>BELTEI Library Management System</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="./publication.html">Add Publication</a></li>
+        <li><a href="./book.html">Book</a></li>
+        <li><a href="./book_report.html">Book Report</a></li>
+        <li><a href="./branch.html">Branch</a></li>
+        <li><a href="./student.html">Student</a></li>
+        <li><a href="./student_report.html">Student Report</a></li>
+        <li><a href="./issue_book.html">Issue Book</a></li>
+        <li><a href="./issue_report.html">Issue Report</a></li>
+        <li><a href="./return_book.html">Return Book</a></li>
+        <li><a href="./penalty.html">Penalty</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="container mx-auto my-8">
+        <!-- Form row -->
+        <div class="flex flex-wrap items-center justify-center mb-4">
+          <div class="w-full md:w-1/3 mb-4 md:mb-0 px-1">
+            <label class="block text-gray-700 font-bold mb-2" for="branch">
+              Select Faculty
+            </label>
+            <select
+              class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="branch"
+            >
+              <option>Branch 1</option>
+              <option>Branch 2</option>
+              <option>Branch 3</option>
+            </select>
+          </div>
+          <div class="w-full md:w-1/3 mb-4 md:mb-0 px-1">
+            <label
+              class="block text-gray-700 font-bold mb-2"
+              for="student-name"
+            >
+              Student Name (Optioanl)
+            </label>
+            <input
+              class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="student-name"
+              type="text"
+              placeholder="Enter student name"
+            />
+          </div>
+          <div class="w-full md:w-1/3 px-1">
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-8"
+              type="button"
+            >
+              View
+            </button>
+          </div>
+        </div>
+
+        <!-- Table row -->
+        <div class="overflow-x-auto">
+          <table class="table-auto border-collapse w-full">
+            <thead>
+              <tr>
+                <th class="py-2 px-4" colspan="4">2 student found</th>
+              </tr>
+              <tr>
+                <th class="py-2 px-4">Student Name</th>
+                <th class="py-2 px-4">Faculty</th>
+                <th class="py-2 px-4">Mobile</th>
+                <th class="py-2 px-4">View</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border py-2 px-4">John Doe</td>
+                <td class="border py-2 px-4">IT</td>
+                <td class="border py-2 px-4">555-1234</td>
+                <td class="border py-2 px-4">
+                  <button
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="button"
+                  >
+                    View
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="border py-2 px-4">Jane Smith</td>
+                <td class="border py-2 px-4">HRE</td>
+                <td class="border py-2 px-4">555-5678</td>
+                <td class="border py-2 px-4">
+                  <button
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="button"
+                  >
+                    View
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 BELTEI LIBRARY Management system. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">About Us</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms & Conditions</a>
+        <a href="#" class="footer-link">Contact Us</a>
+      </div>
+    </footer>
+  </body>
+</html>

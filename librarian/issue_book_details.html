@@ -6,6 +6,12 @@
     <title>Beltei Library Management System - Admin Page</title>
     <link rel="stylesheet" href="./style/admin.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <style>
       /* footer styles */
@@ -14,10 +20,10 @@
         color: #fff;
         padding: 20px;
         text-align: center;
-        position: fixed;
+        /*  position: fixed;
         bottom: 0;
         right: 0;
-        left: 0;
+        left: 0; */
       }
 
       .footer-links {
@@ -50,6 +56,40 @@
   </head>
 
   <body>
+    <!-- success message -->
+    <div id="success-message" class="fixed inset-x-0 top-0 p-4 hidden">
+      <div
+        class="bg-green-500 text-white font-bold px-4 py-3 rounded shadow flex justify-between items-center"
+      >
+        <p id="success-message-text"></p>
+        <p id="success-message-timer"></p>
+      </div>
+    </div>
+
+    <!-- approve pop up -->
+    <div
+      id="approve-modal"
+      class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center"
+    >
+      <div class="bg-white rounded-lg p-5 max-w-md">
+        <p class="text-xl font-bold mb-3">Are you sure you want to approve?</p>
+        <div class="flex justify-end">
+          <button
+            id="cancel-btn"
+            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mr-2"
+          >
+            Cancel
+          </button>
+          <button
+            id="confirm-btn"
+            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+
     <header>
       <h1>BELTEI Library Management System</h1>
     </header>
@@ -70,57 +110,8 @@
       </ul>
     </nav>
 
-    <div class="container mx-auto py-10">
-      <h1 class="text-center text-2xl font-bold mb-5">
-        6 Students Need to Penalty
-      </h1>
-      <table class="table-auto w-full">
-        <thead>
-          <tr>
-            <th class="px-4 py-2">#</th>
-            <th class="px-4 py-2">Student Name</th>
-            <th class="px-4 py-2">Book Title</th>
-            <th class="px-4 py-2">Email</th>
-            <th class="px-4 py-2">Days</th>
-            <th class="px-4 py-2">Price</th>
-            <th class="px-4 py-2">Done</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="border px-4 py-2">1</td>
-            <td class="border px-4 py-2">John Doe</td>
-            <td class="border px-4 py-2">The Great Gatsby</td>
-            <td class="border px-4 py-2">john.doe@example.com</td>
-            <td class="border px-4 py-2">5</td>
-            <td class="border px-4 py-2">$10</td>
-            <td class="border px-4 py-2">
-              <button
-                class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded"
-              >
-                Done
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td class="border px-4 py-2">2</td>
-            <td class="border px-4 py-2">Jane Smith</td>
-            <td class="border px-4 py-2">To Kill a Mockingbird</td>
-            <td class="border px-4 py-2">jane.smith@example.com</td>
-            <td class="border px-4 py-2">3</td>
-            <td class="border px-4 py-2">$6</td>
-            <td class="border px-4 py-2">
-              <button
-                class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded"
-              >
-                Done
-              </button>
-            </td>
-          </tr>
-          <!-- Add more rows for other students -->
-        </tbody>
-      </table>
-    </div>
+    <div class="container mx-auto px-4 py-8 main"></div>
+
     <footer>
       <p>&copy; 2023 BELTEI LIBRARY Management system. All rights reserved.</p>
       <div class="footer-links">
@@ -130,5 +121,8 @@
         <a href="#" class="footer-link">Contact Us</a>
       </div>
     </footer>
+
+    <script src="./../scripts/js/admin/getIssueDetails.js"></script>
+    <script src="./../scripts/js/admin/approveIssueBook.js" defer></script>
   </body>
 </html>

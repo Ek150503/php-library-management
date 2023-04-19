@@ -59,15 +59,11 @@ if($row){
           </div>
           <div class='flex mt-4'>
             <button
-              class='px-4 py-2 bg-green-500 text-white rounded-lg shadow-md mr-4 hover:bg-green-600'
+              class='px-4 py-2 bg-green-500 text-white rounded-lg shadow-md mr-4 hover:bg-green-600' data-key='".$row["issued_id"]."' id='approve-btn'
             >
               Approve
             </button>
-            <button
-              class='px-4 py-2 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600'
-            >
-              Decline
-            </button>
+          
           </div>
         </div>
       </div>";

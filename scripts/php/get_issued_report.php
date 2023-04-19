@@ -17,7 +17,8 @@ $issues = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 if($issues){
   foreach($issues as $issue){
-    $table .= "
+   if($issue["approved"] == 0){
+     $table .= "
     <tr>
               <td class='border px-4 py-2'>". $i ."</td>
               <td class='border px-4 py-2'>". $issue["first_name"]." ". $issue["last_name"]."</td>
@@ -36,6 +37,7 @@ if($issues){
           
     ";
     $i ++;
+   }
   }
 }
 

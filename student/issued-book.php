@@ -26,7 +26,9 @@ if(!isset($_SESSION["student"])){
       }else{
         $approve = "Approved";
       }
-      $card .= "
+      
+      if($book["returned"] == 0){
+        $card .= "
         <div class='bg-white rounded-lg shadow-lg overflow-hidden relative'>
         <div class='bg-gray-500 text-white absolute right-0 p-1'>". $approve ."</div>
         <img class='w-full h-[300px] md:h-[h-350px] lg:h-[400px]' src='../uploads/books/images/". $book["book_cover"] . "' alt='Book Cover' id='load' data-key='". $book["book"]. "'>
@@ -37,6 +39,7 @@ if(!isset($_SESSION["student"])){
         </div>
       </div>
       ";
+      }
     }
   }
 

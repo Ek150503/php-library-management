@@ -6,6 +6,12 @@
     <title>Beltei Library Management System - Admin Page</title>
     <link rel="stylesheet" href="./style/admin.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <style>
       /* footer styles */
@@ -46,10 +52,52 @@
           margin: 5px 0;
         }
       }
+
+      #popup {
+        display: flex;
+      }
+
+      #popup.hidden {
+        display: none;
+      }
     </style>
   </head>
 
   <body>
+    <!-- success message -->
+    <div id="success-message" class="fixed inset-x-0 top-0 p-4 hidden">
+      <div
+        class="bg-green-500 text-white font-bold px-4 py-3 rounded shadow flex justify-between items-center"
+      >
+        <p id="success-message-text"></p>
+        <p id="success-message-timer"></p>
+      </div>
+    </div>
+
+    <!-- pop up -->
+    <div
+      id="popup"
+      class="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 hidden"
+    >
+      <div class="bg-white p-8 rounded-lg">
+        <p class="text-xl mb-4">Are you sure you want to return this book?</p>
+        <div class="flex justify-end">
+          <button
+            id="cancelBtn"
+            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded mr-2"
+          >
+            Cancel
+          </button>
+          <button
+            id="confirmBtn"
+            class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+
     <header>
       <h1>BELTEI Library Management System</h1>
     </header>
@@ -85,17 +133,13 @@
                 id="faculty"
                 name="faculty"
                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              >
-                <option value="engineering">Engineering</option>
-                <option value="business">Business</option>
-                <option value="education">Education</option>
-              </select>
+              ></select>
             </form>
           </div>
         </div>
         <div class="bg-gray-100 px-4 py-3">
           <h3 class="text-lg font-medium leading-6 text-gray-900">
-            10 Student Records Found
+            Student Records
           </h3>
         </div>
         <div class="px-4 py-3">
@@ -125,80 +169,11 @@
                 <th
                   class="text-left py-3 px-4 uppercase font-medium text-sm text-gray-500 tracking-wider"
                 >
-                  Return
+                  Detail
                 </th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td class="border-t border-gray-200 py-3 px-4">1</td>
-                <td class="border-t border-gray-200 py-3 px-4">John Doe</td>
-                <td class="border-t border-gray-200 py-3 px-4">
-                  The Great Gatsby
-                </td>
-                <td class="border-t border-gray-200 py-3 px-4">
-                  johndoe@email.com
-                </td>
-                <td class="border-t border-gray-200 py-3 px-4">
-                  <button
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                  >
-                    Return
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td class="border-t border-gray-200 py-3 px-4">1</td>
-                <td class="border-t border-gray-200 py-3 px-4">John Doe</td>
-                <td class="border-t border-gray-200 py-3 px-4">
-                  The Great Gatsby
-                </td>
-                <td class="border-t border-gray-200 py-3 px-4">
-                  johndoe@email.com
-                </td>
-                <td class="border-t border-gray-200 py-3 px-4">
-                  <button
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                  >
-                    Return
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td class="border-t border-gray-200 py-3 px-4">1</td>
-                <td class="border-t border-gray-200 py-3 px-4">John Doe</td>
-                <td class="border-t border-gray-200 py-3 px-4">
-                  The Great Gatsby
-                </td>
-                <td class="border-t border-gray-200 py-3 px-4">
-                  johndoe@email.com
-                </td>
-                <td class="border-t border-gray-200 py-3 px-4">
-                  <button
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                  >
-                    Return
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td class="border-t border-gray-200 py-3 px-4">1</td>
-                <td class="border-t border-gray-200 py-3 px-4">John Doe</td>
-                <td class="border-t border-gray-200 py-3 px-4">
-                  The Great Gatsby
-                </td>
-                <td class="border-t border-gray-200 py-3 px-4">
-                  johndoe@email.com
-                </td>
-                <td class="border-t border-gray-200 py-3 px-4">
-                  <button
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                  >
-                    Return
-                  </button>
-                </td>
-              </tr>
-            </tbody>
+            <tbody id="tbody"></tbody>
           </table>
         </div>
       </div>
@@ -213,5 +188,29 @@
         <a href="#" class="footer-link">Contact Us</a>
       </div>
     </footer>
+
+    <script src="./../scripts/js/returnBook.js" defer></script>
+    <script src="./../scripts/js/admin.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#faculty').change(function () {
+          let branch_id = $(this).val();
+
+          console.log(branch_id);
+          $.ajax({
+            url: '../scripts/php/get_return_book.php',
+            type: 'POST',
+            data: { branch_id: branch_id },
+            success: function (data) {
+              $('#tbody').html(data);
+              returnBooks();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.log(textStatus, errorThrown);
+            },
+          });
+        });
+      });
+    </script>
   </body>
 </html>
